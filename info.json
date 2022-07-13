@@ -1,0 +1,255 @@
+{
+    "header": [
+        " *   ",
+        " *   如非需要调试，本文件可删除",
+        " *   非专业人员可将本文件删除",
+        " *   详细介绍请参考: https://bazhan.wang/faq#INFO-JSON",
+        " *   "
+    ],
+    "resources": [
+        {
+            "url": "https://www.tablesgenerator.com/",
+            "path": "index.html",
+            "saved": true,
+            "size": 38814,
+            "children": [
+                {
+                    "url": "https://www.tablesgenerator.com/static/js/combined.base.442.js",
+                    "path": "js/combined.base.442.js",
+                    "saved": true,
+                    "size": 0,
+                    "children": []
+                },
+                {
+                    "url": "https://www.googletagmanager.com/gtag/js?id=UA-40666600-1",
+                    "saved": false
+                },
+                {
+                    "url": "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2865581676256868",
+                    "saved": false
+                },
+                {
+                    "url": "https://fonts.googleapis.com/css?family=Quicksand",
+                    "saved": false
+                },
+                {
+                    "url": "https://www.tablesgenerator.com/static/css/combined.442.css",
+                    "path": "css/combined.442.css",
+                    "saved": true,
+                    "size": 257509,
+                    "children": [
+                        {
+                            "url": "https://www.tablesgenerator.com/static/font/fa-brands-400.eot",
+                            "path": "fonts/fa-brands-400.eot",
+                            "saved": true,
+                            "size": 0,
+                            "children": []
+                        },
+                        {
+                            "url": "https://www.tablesgenerator.com/static/font/fa-brands-400.woff2",
+                            "path": "fonts/fa-brands-400.woff2",
+                            "saved": true,
+                            "size": 0,
+                            "children": []
+                        },
+                        {
+                            "url": "https://www.tablesgenerator.com/static/font/fa-brands-400.woff",
+                            "path": "fonts/fa-brands-400.woff",
+                            "saved": true,
+                            "size": 0,
+                            "children": []
+                        },
+                        {
+                            "url": "https://www.tablesgenerator.com/static/font/fa-brands-400.ttf",
+                            "path": "fonts/fa-brands-400.ttf",
+                            "saved": true,
+                            "size": 0,
+                            "children": []
+                        },
+                        {
+                            "url": "https://www.tablesgenerator.com/static/font/fa-brands-400.svg#fontawesome",
+                            "path": "img/fa-brands-400.svg",
+                            "saved": true,
+                            "size": 0,
+                            "children": []
+                        },
+                        {
+                            "url": "https://www.tablesgenerator.com/static/font/fa-regular-400.eot",
+                            "path": "fonts/fa-regular-400.eot",
+                            "saved": true,
+                            "size": 0,
+                            "children": []
+                        },
+                        {
+                            "url": "https://www.tablesgenerator.com/static/font/fa-regular-400.woff2",
+                            "path": "fonts/fa-regular-400.woff2",
+                            "saved": true,
+                            "size": 0,
+                            "children": []
+                        },
+                        {
+                            "url": "https://www.tablesgenerator.com/static/font/fa-regular-400.woff",
+                            "path": "fonts/fa-regular-400.woff",
+                            "saved": true,
+                            "size": 0,
+                            "children": []
+                        },
+                        {
+                            "url": "https://www.tablesgenerator.com/static/font/fa-regular-400.ttf",
+                            "path": "fonts/fa-regular-400.ttf",
+                            "saved": true,
+                            "size": 0,
+                            "children": []
+                        },
+                        {
+                            "url": "https://www.tablesgenerator.com/static/font/fa-regular-400.svg#fontawesome",
+                            "path": "img/fa-regular-400.svg",
+                            "saved": true,
+                            "size": 0,
+                            "children": []
+                        },
+                        {
+                            "url": "https://www.tablesgenerator.com/static/font/fa-solid-900.eot",
+                            "path": "fonts/fa-solid-900.eot",
+                            "saved": true,
+                            "size": 0,
+                            "children": []
+                        },
+                        {
+                            "url": "https://www.tablesgenerator.com/static/font/fa-solid-900.woff2",
+                            "path": "fonts/fa-solid-900.woff2",
+                            "saved": true,
+                            "size": 0,
+                            "children": []
+                        },
+                        {
+                            "url": "https://www.tablesgenerator.com/static/font/fa-solid-900.woff",
+                            "path": "fonts/fa-solid-900.woff",
+                            "saved": true,
+                            "size": 0,
+                            "children": []
+                        },
+                        {
+                            "url": "https://www.tablesgenerator.com/static/font/fa-solid-900.ttf",
+                            "path": "fonts/fa-solid-900.ttf",
+                            "saved": true,
+                            "size": 0,
+                            "children": []
+                        },
+                        {
+                            "url": "https://www.tablesgenerator.com/static/font/fa-solid-900.svg#fontawesome",
+                            "path": "img/fa-solid-900.svg",
+                            "saved": true,
+                            "size": 0,
+                            "children": []
+                        },
+                        {
+                            "url": "https://www.tablesgenerator.com/static/font/fontawesome-webfont.eot?v=3.2.1",
+                            "path": "fonts/fontawesome-webfont_1.eot",
+                            "saved": true,
+                            "size": 0,
+                            "children": []
+                        },
+                        {
+                            "url": "https://www.tablesgenerator.com/static/font/fontawesome-webfont.eot?#iefix&v=3.2.1",
+                            "path": "fonts/fontawesome-webfont.eot",
+                            "saved": true,
+                            "size": 0,
+                            "children": []
+                        },
+                        {
+                            "url": "https://www.tablesgenerator.com/static/font/fontawesome-webfont.woff?v=3.2.1",
+                            "path": "fonts/fontawesome-webfont.woff",
+                            "saved": true,
+                            "size": 0,
+                            "children": []
+                        },
+                        {
+                            "url": "https://www.tablesgenerator.com/static/font/fontawesome-webfont.ttf?v=3.2.1",
+                            "path": "fonts/fontawesome-webfont.ttf",
+                            "saved": true,
+                            "size": 0,
+                            "children": []
+                        },
+                        {
+                            "url": "https://www.tablesgenerator.com/static/font/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1",
+                            "path": "img/fontawesome-webfont.svg",
+                            "saved": true,
+                            "size": 0,
+                            "children": []
+                        },
+                        {
+                            "url": "https://www.tablesgenerator.com/static/img/logo.png",
+                            "path": "img/logo.png",
+                            "saved": true,
+                            "size": 0,
+                            "children": []
+                        },
+                        {
+                            "url": "https://www.tablesgenerator.com/static/img/ajax-loader.gif",
+                            "path": "img/ajax-loader.gif",
+                            "saved": true,
+                            "size": 0,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "url": "https://www.tablesgenerator.com/static/img/favicon.png",
+                    "path": "img/favicon.png",
+                    "saved": true,
+                    "size": 0,
+                    "children": []
+                }
+            ]
+        }
+    ],
+    "alias": "www-tablesgenerator-com-7rlphydp",
+    "info": {
+        "remark": [],
+        "title": "Create LaTeX tables online – TablesGenerator.com",
+        "domain": "www.tablesgenerator.com",
+        "origin": "https://www.tablesgenerator.com",
+        "ip": "142.251.42.179",
+        "main": "index.html",
+        "url": "https://www.tablesgenerator.com/",
+        "totalSize": "296 kB",
+        "request": {
+            "headers": {
+                "accept": "text/html,*/*",
+                "accept-language": "zh-CN,zh;q=0.9",
+                "cache-control": "no-cache",
+                "cookie": "",
+                "referer": "https://www.tablesgenerator.com/",
+                "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36",
+                "x-scraper-website": "https://bazhan.wang/"
+            }
+        },
+        "response": {
+            "responseUrl": "https://www.tablesgenerator.com/",
+            "redirects": [],
+            "statusCode": 200,
+            "headers": {
+                "content-type": "text/html; charset=utf-8",
+                "vary": "Accept-Encoding",
+                "x-cloud-trace-context": "90e9a38f16b08acb30d9456356aaa17e",
+                "date": "Wed, 13 Jul 2022 07:36:22 GMT",
+                "server": "Google Frontend",
+                "content-length": "40362",
+                "connection": "close"
+            }
+        },
+        "time": {
+            "start": "2022-07-13T07:36:22.289Z",
+            "end": "2022-07-13T07:36:30.156Z"
+        }
+    },
+    "options": {
+        "url": "https://www.tablesgenerator.com/",
+        "referer": "",
+        "cookies": "",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36",
+        "formatter": [],
+        "filenameGenerator": "byType"
+    }
+}

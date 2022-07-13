@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>用数画图</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="使用Excel表格中的数据, 轻松绘制期望的统计图">
+    <meta name="author" content="https://github.com/chencn2020">
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/combined.442.css" type="text/css" media="all" title="no title">
+
+    <script type="text/javascript" src="js/combined.base.442.js" data-manual=""></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="masthead">
+            <div class="navbar">
+                <h1 id="logo"><a href="https://github.com/chencn2020/DrawWithYourData"
+                        title="draw with your data">用数画图</a></h1>
+                <ul class="nav" id="top-nav">
+                    <li class="active">
+                        <a href="/index.html" title="Home Index">主页</a>
+                    </li>
+                    <!-- <li>
+                        <a href="/html_tables" title="HTML tables generator">HTML</a>
+                    </li>
+                    <li>
+                        <a href="/text_tables" title="Plain text tables generator">Text</a>
+                    </li>
+                    <li>
+                        <a href="/markdown_tables" title="Markdown tables generator">Markdown</a>
+                    </li>
+                    <li>
+                        <a href="/mediawiki_tables" title="MediaWiki tables generator">MediaWiki</a>
+                    </li> -->
+                </ul>
+            </div><!-- /.navbar -->
+        </div>
+
+
+        <div id="main-header">
+        </div>
+
+        <div id="middle-section">
+            <div id="main-block">
+                <div style="position: relative">
+                    <div id="menu-toolbar-wrapper">
+                        <div class="main-menu">
+                            <ul class="nav nav-pills">
+                                <li class="dropdown">
+                                    <!-- File item -->
+                                    <a class="dropdown-toggle" id="file_item" role="button" data-toggle="dropdown"
+                                        href="#">文件 <b class="caret"></b></a>
+                                    <ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="file_item">
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#"
+                                                id="new_table_item" data-toggle="modal"
+                                                data-target="#new_table_dialog">创建新表</a></li>
+
+                                        <li role="presentation" class="divider"></li>
+
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#"
+                                                id="import_csv_item" data-toggle="modal"
+                                                data-target="#import_dialog">从Excel中导入</a></li>
+
+                                        <li role="presentation" class="divider"></li>
+
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#"
+                                                id="import_pasted_item" data-toggle="modal"
+                                                data-target="#import_pasted_dialog">保存数据</a></li>
+
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#"
+                                                id="import_latex_item" data-toggle="modal"
+                                                data-target="#import_latex_dialog">导入数据</a></li>
+
+                                        <li role="presentation" class="divider"></li>
+
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#"
+                                                id="save_table_item" data-toggle="modal"
+                                                data-target="#save_table_dialog">样例展示</a></li>
+                                    </ul>
+                                </li><!-- File item -->
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" id="column-dropdown" role="button" data-toggle="dropdown"
+                                        href="#">编辑 <b class="caret"></b></a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="column-dropdown">
+
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#"
+                                                id="edit_undo"><i class="icon-fixed-width icon-rotate-left"></i> 重做
+                                                (Ctrl+Z)</a></li>
+
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#"
+                                                id="edit_redo"><i class="icon-fixed-width icon-rotate-right"></i> 撤销
+                                                (Ctrl+Y)</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" id="menu_table" role="button" data-toggle="dropdown"
+                                        href="#">帮助 <b class="caret"></b></a>
+                                    <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop_table">
+                                        <li role="presentation" class="dropdown-submenu">
+                                            <a role="menuitem" tabindex="-1" href="#" id="table_resize">
+                                                <i class="icon-fixed-width icon-resize-full"></i> 使用说明
+                                            </a>
+                                        </li>
+                                        <li role="presentation" class="divider"></li>
+                                        <li role="presentation">
+                                            <a role="menuitem" tabindex="-1" href="#" id="table_reset">
+                                                <i class="icon-fixed-width icon-circle-blank"></i> 清空内容
+                                            </a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a role="menuitem" tabindex="-1" href="#" id="table_clear_formatting">
+                                                <i class="icon-fixed-width icon-check-minus"></i>清空格式</a>
+                                        </li>
+                                        <li role="presentation" class="divider"></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#"
+                                                id="table_add_all_borders">联系我们</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="main-choosen-draw">
+            <div id="menu-choose">
+                <div id="data-import-choose">
+                    <div class="btn btn-success copy-to-clipboard-workaround" style="display: block; float: left; font-weight: bold;">
+                        <i class="icon-paste"></i> 选取Excel文件
+                    </div>
+                </div>
+
+                <div id="data-draw-plot-choose">
+                    <div class="btn btn-success copy-to-clipboard-workaround" style="display: block; float: left; font-weight: bold;">
+                        <i class="icon-paste"></i> 添加子图
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="draw-img"></div>
+        </div>
+
+
+        <div id="footer">
+            <div style="display: flex; flex-direction: row; justify-content: flex-end;">
+                <a href="/about" title="Find out more about out Table Generator">About</a>
+                <a href="/changelog" title="Read about recent changes to our application">Changelog</a>
+                <a href="#" onclick="CookieConsent.show_dialog();event.preventDefault();">Cookie Settings</a>
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/contact" title="Contact with us">Contact</a>
+            </div>
+            <div>© TablesGenerator.com</div>
+        </div>
+    </div> <!-- /container -->
+
+
+    <div id="message_dialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="message_dialog_label"
+        aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="message_dialog_label">Notification</h3>
+        </div>
+        <div class="modal-body">
+            <p id="message_dialog_body"></p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>
+    </div>
+    <div id="new_table_dialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Create new table</h3>
+        </div>
+
+        <form class="form-horizontal">
+            <div class="modal-body">
+                <p>
+                    Enter table size. Please, remember that the current table contents will
+                    be lost.
+                </p>
+
+                <div class="control-group">
+                    <label class="control-label" for="new_table_rows">Rows</label>
+                    <div class="controls">
+                        <input type="number" min="1" max="500" id="new_table_rows_input" value="3">
+                        <span class="help-inline">Valid range: 1-500</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="new_table_columns">Columns</label>
+                    <div class="controls">
+                        <input type="number" min="1" max="20" id="new_table_columns_input" value="3">
+                        <span class="help-inline">Valid range: 1-20</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                <input type="submit" id="create_new_table_btn" value="Create" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+    <!-- Import dialog -->
+    <div id="import_dialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Import data from CSV file</h3>
+        </div>
+        <form action="/latex_tables" enctype="multipart/form-data" method="post" style="margin: 0;">
+            <div class="modal-body">
+                <p>You can import table data by uploading file in CSV format (Comma
+                    Separated Value). Most spreadsheet software, both desktop and
+                    online, allows to save tabular data in CSV format —
+                    it is usually available in the File menu under the name "Save As..." or
+                    "Export".
+                </p>
+                <div>
+                    <label style="display: inline-block;">Select CSV file </label>
+                    <input type="file" name="imported">
+                </div>
+                <p class="text-info" style="padding-top: 10px;">
+                    Please, ensure that the character encoding of your CSV file was set to UTF-8
+                    otherwise some of the characters may be displayed incorrectly.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                <input type="submit" value="Import" class="btn btn-primary">
+            </div>
+        </form>
+    </div><!-- Import dialog -->
+    <!-- Import dialog -->
+    <div id="import_pasted_dialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Paste table data</h3>
+        </div>
+        <form action="/latex_tables" method="post" accept-charset="UTF-8" style="margin: 0;" id="import_pasted_form">
+            <div class="modal-body" style="height: 500px; display: flex; flex-direction: column;">
+                <p>
+                    Paste (Ctrl + V) below an existing table copied (Ctrl + C) from a
+                    <em>spreadsheet</em> (e.g. Microsoft Excel), a <em>text document</em>, a <em>Markdown / HTML</em>
+                    code, or
+                    even a <em>website</em>.
+                </p>
+                <div id="table_import_paste_target" contenteditable="true"></div>
+
+                <label class="checkbox" style="margin: 5px 0 0 0; display: none;"><input type="checkbox"
+                        id="import_pasted_with_style">Paste with formatting (colors, text style, etc.)</label>
+
+                <textarea id="import_pasted" name="import_pasted" accept-charset="utf-8"
+                    style="display: none;"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                <input type="submit" value="Load" class="btn btn-primary" id="table_import_submit_btn">
+            </div>
+        </form>
+    </div><!-- Import dialog -->
+    <div id="save_table_dialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Save table</h3>
+        </div>
+
+        <div class="modal-body">
+            <p>
+                If you want to keep the table for any future editing click the
+                "Download" button below. The file with the table can be loaded back using
+                the "Load table" option from the menu.
+            </p>
+
+            <form id="table-save-form" action="/table-save" method="POST" accept-charset="utf-8"
+                class="form-horizontal">
+                <div class="control-group">
+                    <label class="control-label" for="table-name">Table name</label>
+                    <div class="controls">
+                        <input type="text" id="table-name" name="table-name" placeholder="Enter name...">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <a href="#" class="btn btn-primary" id="table-save-link"
+                            title="Click to download file with the table">Download</a>
+                    </div>
+                </div>
+                <input name="table-data" id="table-save-data" type="hidden">
+            </form>
+
+            <p>
+            </p>
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+        </div>
+    </div><!-- Import dialog -->
+    <!-- Load table dialog -->
+    <div id="load_table_dialog" class="modal hide fade" tabindex="-1" role="dialog"
+        aria-labelledby="load_table_dialog_label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="load_table_dialog_label">Load table...</h3>
+        </div>
+        <form action="/latex_tables/load" enctype="multipart/form-data" method="post" style="margin: 0;">
+            <div class="modal-body">
+                <p>Load table from a previously saved file.</p>
+                <div>
+                    <label style="display: inline-block;">Select TGN file </label>
+                    <input type="file" name="load_table_file">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                <input type="submit" value="Load" class="btn btn-primary">
+            </div>
+        </form>
+    </div><!-- Import dialog -->
+
+    <div id="quick_help_dialog" class="modal hide fade" tabindex="-1" role="dialog"
+        aria-labelledby="quick_help_dialog_label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="quick_help_dialog_label">Quick help</h3>
+        </div>
+
+        <div class="modal-body">
+            <p>Basic key commands</p>
+            <ul>
+                <li><strong>ENTER or double click</strong> — to start editing a cell</li>
+                <li><strong>ESC</strong> — to stop editing a cell</li>
+                <li><strong>CTRL+C, CTRL+X, CTRL+V</strong> — to copy, cut
+                    and paste, respectively</li>
+                <li><strong>TAB or Arrow Keys</strong> — to select a different cell</li>
+                <li><strong>CTRL+Z</strong> — to undo a change</li>
+                <li><strong>CTRL+Y</strong> — to redo a change</li>
+                <li><strong>Left mouse button</strong> — click a cell to
+                    select it (hold left button pressed to select adjacent cells)</li>
+                <li><strong>Hold CTRL</strong> to select multiple cells (not necessarily adjacent).</li>
+            </ul>
+
+            <p>
+                Some of the functionalities may not work in all browsers — if you
+                encounter a problem, please try to use another browser (Google Chrome,
+                Mozilla Firefox) or update your browser to a newer version if available. If the problem
+                still persists please <a href="/contact" title="Contact with us">let us know</a>.
+            </p>
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>
+    </div>
+    <div id="table-aux-col-menu" class="context-menu-wrap">
+        <ul class="context-menu" role="menu">
+            <li data-menu-item-id="add_to_the_left">
+                <a tab-index="-1">Add column to the left</a>
+            </li>
+
+            <li data-menu-item-id="add_to_the_right">
+                <a tab-index="-1">Add column to the right</a>
+            </li>
+
+            <li data-menu-item-id="remove_column">
+                <a tab-index="-1">Remove column(s)</a>
+            </li>
+
+
+        </ul>
+    </div>
+
+    <div id="table-aux-row-menu" class="context-menu-wrap">
+        <ul class="context-menu" role="menu">
+            <li data-menu-item-id="add_row_above">
+                <a tab-index="-1">Add row above</a>
+            </li>
+
+            <li data-menu-item-id="add_row_below">
+                <a tab-index="-1">Add row below</a>
+            </li>
+
+            <li data-menu-item-id="remove_row">
+                <a tab-index="-1">Remove row(s)</a>
+            </li>
+
+        </ul>
+    </div>
+
+
+    <div id="table-cell-menu" class="context-menu-wrap">
+        <ul class="context-menu" role="menu">
+
+            <li data-menu-item-id="cell_contents_cut" class="with-zero-clipboard context-menu-item"
+                data-action-id="cell_contents_cut">
+                <a tab-index="-1"><span class="icon-cut">&nbsp;</span>Cut <span
+                        class="context-menu-item__keys">(Ctrl+X)</span></a>
+            </li>
+
+            <li data-menu-item-id="cell_contents_copy" class="with-zero-clipboard" data-action-id="cell_contents_copy">
+                <a tab-index="-1"><span class="icon-copy">&nbsp;</span>Copy <span
+                        class="context-menu-item__keys">(Ctrl+C)</span></a>
+            </li>
+
+            <li id="context-menu-cell-paste">
+                <a tab-index="-1"><span class="icon-paste">&nbsp;</span>Paste <span
+                        class="context-menu-item__keys">(Ctrl+V)</span></a>
+            </li>
+            <li id="context-menu-cell-paste-special">
+                <a tab-index="-1"><span class="icon-paste">&nbsp;</span>Paste special <span
+                        class="context-menu-item__keys">(Ctrl+Shift+V)</span></a>
+            </li>
+
+            <li class="divider"></li>
+
+            <li class="dropdown-submenu">
+                <a tabindex="-1" href="#">Row</a>
+                <ul class="dropdown-menu">
+                    <li data-menu-item-id="add_row_above">
+                        <a tab-index="-1">Add row above</a>
+                    </li>
+
+                    <li data-menu-item-id="add_row_below">
+                        <a tab-index="-1">Add row below</a>
+                    </li>
+
+                    <li data-menu-item-id="remove_row">
+                        <a tab-index="-1">Remove row(s)</a>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li class="dropdown-submenu">
+                <a tabindex="-1" href="#">Column</a>
+                <ul class="dropdown-menu" role="menu">
+                    <li data-menu-item-id="add_to_the_left">
+                        <a tab-index="-1">Add column to the left</a>
+                    </li>
+
+                    <li data-menu-item-id="add_to_the_right">
+                        <a tab-index="-1">Add column to the right</a>
+                    </li>
+
+                    <li data-menu-item-id="remove_column">
+                        <a tab-index="-1">Remove column(s)</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="divider"></li>
+
+            <li class="dropdown-submenu">
+                <a tabindex="-1" href="#">Text align</a>
+                <ul class="dropdown-menu" role="menu">
+                    <li data-menu-item-id="cell_align_left">
+                        <a tab-index="-1">
+                            <span class="menu-item-icon-align-left">&nbsp;</span>
+                            Left</a>
+                    </li>
+
+                    <li data-menu-item-id="cell_align_center">
+                        <a tab-index="-1">
+                            <span class="menu-item-icon-align-center">&nbsp;</span>
+                            Center</a>
+                    </li>
+
+                    <li data-menu-item-id="cell_align_right">
+                        <a tab-index="-1">
+                            <span class="menu-item-icon-align-right">&nbsp;</span>
+                            Right</a>
+                    </li>
+
+                    <li data-menu-item-id="cell_align_top" style="border-top: 1px lightgray solid;">
+                        <a tab-index="-1" title="Align to the top (vertically)">
+                            <span class="menu-item-icon-align-top">&nbsp;</span>
+                            Top</a>
+                    </li>
+
+                    <li data-menu-item-id="cell_align_middle">
+                        <a tab-index="-1" title="Align to the middle (vertically)">
+                            <span class="menu-item-icon-align-middle">&nbsp;</span>
+                            Middle</a>
+                    </li>
+
+                    <li data-menu-item-id="cell_align_bottom">
+                        <a tab-index="-1" title="Align to the bottom (vertically)">
+                            <span class="menu-item-icon-align-bottom">&nbsp;</span>
+                            Bottom</a>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+
+
+    <div id="column_width_dialog" class="modal hide fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Set column width</h3>
+        </div>
+
+        <form class="form-horizontal">
+            <div class="modal-body">
+                <div class="control-group">
+                    <label class="control-label" for="column_width_input">Width</label>
+                    <div class="controls">
+                        <input type="number" min="1" max="2560" id="column_width_input" value="3">
+                        <span class="help-inline">px</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                <input type="submit" id="set_column_width_btn" value="OK" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+    <div id="dropbox_save_table_dialog" class="modal hide fade" tabindex="-1" role="dialog"
+        aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Save table to your Dropbox account</h3>
+        </div>
+
+        <div class="modal-body">
+            <p>
+                Your table will be saved using your Dropbox account.
+                Please enter a name for the table.
+                You can load later your saved tables using "File/Dropbox/Load table" menu item.
+            </p>
+
+            <form id="dropbox-table-save-form" accept-charset="utf-8" class="form-horizontal">
+                <div class="control-group">
+                    <label class="control-label" for="table-name">Table name</label>
+                    <div class="controls">
+                        <input type="text" id="dropbox_table_name" name="dropbox_table_name"
+                            placeholder="Enter name...">
+                    </div>
+                </div>
+            </form>
+
+            <p>
+            </p>
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+            <button class="btn btn-primary" id="dropbox_table_save">
+                <div class="spin-button"></div><span>Save</span>
+            </button>
+        </div>
+    </div>
+    <div id="dropbox_load_table_dialog" class="modal hide fade" tabindex="-1" role="dialog"
+        aria-labelledby="dropbox_load_table_dialog_label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="dropbox_load_table_dialog_label">Load table from Dropbox...</h3>
+        </div>
+        <div class="modal-body">
+            <p>Select a table to load.</p>
+            <div id="dropbox_tables_list"></div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+        </div>
+    </div>
+
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function () {
+            var json_table = '';
+            var loaded_table = '';
+            init_latex_tables_ui(json_table, loaded_table);
+        });
+    </script>
+
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-40666600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'wait_for_update': 100
+        });
+        gtag('set', 'ads_data_redaction', true);
+        gtag('js', new Date());
+        gtag('config', 'UA-40666600-1');
+        gtag('config', 'ca-pub-2865581676256868');
+    </script>
+
+
+
+
+    <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2865581676256868"
+        crossorigin="anonymous"></script>
+
+
+
+    <script>(adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 1;</script>
+
+
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function (event) {
+            function update_consent(cats) {
+                function is_granted(cat) { return (cats.indexOf(cat) !== -1); }
+
+                if (is_granted('analytics')) {
+                    gtag('consent', 'update', { 'analytics_storage': 'granted' });
+                }
+                if (is_granted('targeting')) {
+                    gtag('consent', 'update', { 'ad_storage': 'granted' });
+                }
+                if (is_granted('targeting') || is_granted('additional')) {
+                    (adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 0;
+                }
+            }
+            CookieConsent.init('JP', '13', update_consent);
+        });
+    </script>
+
+
+
+
+</body>
+
+</html>
