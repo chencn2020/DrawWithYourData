@@ -15150,7 +15150,7 @@ p {
 
 #menu-choose {
   float: left;
-  width: 35%;
+  width: 30%;
   border: 1px solid #060;
 }
 
@@ -15172,7 +15172,7 @@ p {
 
 #draw-img {
   float: right;
-  width: 60%;
+  width: 68%;
   border: 1px solid #00F;
   min-height: 50%;
 }

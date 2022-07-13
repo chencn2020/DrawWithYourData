@@ -134,13 +134,15 @@
         <div id="main-choosen-draw">
             <div id="menu-choose">
                 <div id="data-import-choose">
-                    <div class="btn btn-success copy-to-clipboard-workaround" style="display: block; float: left; font-weight: bold;">
+                    <div class="btn btn-success copy-to-clipboard-workaround"
+                        style="display: block; float: left; font-weight: bold;">
                         <i class="icon-paste"></i> 选取Excel文件
                     </div>
                 </div>
 
                 <div id="data-draw-plot-choose">
-                    <div class="btn btn-success copy-to-clipboard-workaround" style="display: block; float: left; font-weight: bold;">
+                    <div class="btn btn-success copy-to-clipboard-workaround"
+                        style="display: block; float: left; font-weight: bold;">
                         <i class="icon-paste"></i> 添加子图
                     </div>
                 </div>
@@ -588,7 +590,88 @@
             var loaded_table = '';
             init_latex_tables_ui(json_table, loaded_table);
         });
+
+        var main_choose_draw = document.getElementById('main-choosen-draw')
+        main_choose_draw.style.minHeight = $(window).height() * 0.7 + 'px'
+
+        var draw_img = document.getElementById('draw-img')
+        draw_img.style.minHeight = main_choose_draw.style.minHeight
+
+        console.log($(window).height())
     </script>
+
+    <!-- <script type="text/javascript">
+        //目标是：复选框效果，样式比较简单，点击字体变颜色即可
+        var list = document.querySelectorAll("img"); //先获取所有标签
+        var btn = document.getElementById('submit_button');
+        btn.addEventListener('click', submit_choice, false);
+
+        var click_sum = 0;
+        console.log(list); //类数组
+
+        for (var i = 0; i < list.length; i++) {
+            list[i].onclick = function () {
+                if (this.classList.value == 'checked') {
+                    click_sum--;
+                    this.classList.toggle('checked');
+                } else if (click_sum >= 3) {
+                    alert('You can only pick three imgs.')
+                } else {
+                    this.classList.toggle('checked');
+                    click_sum++;
+                }
+                console.log('click_sum' + String(click_sum))
+            }
+        }
+
+        function submit_choice() {
+            var img_list = document.querySelectorAll("img"); //先获取所有标签
+            var submit_list = new Array()
+            for (var i = 0; i < img_list.length; i++) {
+                if (img_list[i].classList.value == 'checked') {
+                    submit_list.push(img_list[i].id)
+                }
+            }
+
+            if (submit_list.length < 3) {
+                alert('Please choose at least 3 imgs.')
+            } else {
+                // console.log(submit_list)
+                console.log('Submit list' + submit_list.toString())
+                var nowCase = document.getElementById('nowCase').innerHTML;
+
+                var httpRequest = new XMLHttpRequest();//第一步：创建需要的对象
+                httpRequest.open('POST', "/service", true); //第二步：打开连接/***发送json格式文件必须设置请求头 ；如下 - */
+                httpRequest.setRequestHeader("Content-type", "application/json");//设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+                var obj = {
+                    "img_chosen": submit_list.toString(),
+                    "message": nowCase
+                };
+                httpRequest.send(JSON.stringify(obj));//发送请求 将json写入send中
+                window.location.href = "/service"
+            }
+        }
+
+        function loadBody(message) {
+            if (message.length !== 0) {
+                alert(message)
+            }
+
+        }
+
+        var message = document.getElementById('message').innerHTML;
+
+        window.onload = function () {
+
+            console.log(message)
+
+            if (message.length >= 2 & message !== 'None') {
+                alert(message)
+            }
+        }
+
+    </script> -->
+
 
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-40666600-1"></script>
     <script>
